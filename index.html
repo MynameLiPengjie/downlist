@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="plug/font-awesome/css/font-awesome.css"/>
+	</head>
+
+	<body>
+
+		<div class="cont1">
+			<input type="text" name="" id="" value="" />
+			<button class="fa fa-angle-down">
+				
+			</button>
+			<ul id="listone">
+				<li><span class="num">10</span><span class="txt">万元</span></li>
+				<li><span class="num">20</span><span class="txt">万元</span></li>
+				<li><span class="num">30</span><span class="txt">万元</span></li>
+				<li><span class="num">40</span><span class="txt">万元</span></li>
+				<li><span class="num">50</span><span class="txt">万元</span></li>
+				<li><span class="num">60</span><span class="txt">万元</span></li>
+				<li><span class="num">70</span><span class="txt">万元</span></li>
+				<li><span class="num">80</span><span class="txt">万元</span></li>
+			</ul>
+			
+			<span class="text-box">
+				万元
+			</span>
+			
+		</div>
+
+		<div class="cont2">
+			<input type="text" name="" id="" value="" />
+			<button class="fa fa-angle-down">
+				
+			</button>
+			<ul id="listtwo">
+				<li><span class="num">1</span><span class="txt">年</span></li>
+				<li><span class="num">2</span><span class="txt">年</span></li>
+				<li><span class="num">3</span><span class="txt">年</span></li>
+				<li><span class="num">12</span><span class="txt">个月</span></li>
+				<li><span class="num">24</span><span class="txt">个月</span></li>
+				<li><span class="num">6</span><span class="txt">个月</span></li>
+				<li><span class="num">5</span><span class="txt">个月</span></li>
+				<li><span class="num">8</span><span class="txt">个月</span></li>
+			</ul>
+			
+			<span class="text-box">
+				个月
+			</span>
+			
+		</div>
+
+		<script src="plug/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".cont1 button").click(function(){
+					$(".cont1 ul").css("display","block");
+					$(".cont1 button").removeClass().addClass("fa fa-angle-up")
+				})
+				$(".cont2 button").click(function(){
+					$(".cont2 ul").css("display","block")
+					$(".cont2 button").removeClass().addClass("fa fa-angle-up")
+				})
+				$(".cont1 li").click(function(){
+					var index = $(this).index()
+					var txt = $(".cont1 .txt").eq(index).text()
+					var num = $(".cont1 .num").eq(index).text()
+					$(".cont1 input").val(num);
+					$(".cont1 button").removeClass().addClass("fa fa-angle-down")
+					$(".cont1 .text-box").text(txt);
+					$(".cont1 ul").hide()
+				})
+				$(".cont2 li").click(function(){
+					var index = $(this).index()
+					var txt = $(".cont2 .txt").eq(index).text()
+					var num  = $(".cont2 .num").eq(index).text()
+					$(".cont2 input").val(num);
+					$(".cont2 button").removeClass().addClass("fa fa-angle-down")
+					$(".cont2 .text-box").text(txt)
+					$(".cont2 ul").hide()
+				})
+				
+			})
+		</script>
+	</body>
+
+</html>
